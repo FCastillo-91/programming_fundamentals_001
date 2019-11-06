@@ -33,3 +33,34 @@ describe("utils.countBooks", () => {
   expect(utils.countBooks(["Book1", "Book2", "Book3"])).toBe(3);
 });
 });
+
+describe("utils.isInStock", () => {
+  test("returns true if the title is in stock", () => {
+    const book = {
+        title: "The Stone Diaries",
+        author: "Carol Shields",
+        yearOfPublication: 1993,
+        quantity: 9
+    };
+    expect(utils.isInStock(book)).toBe(true);
+  });
+});
+
+describe("utils.isInStock", () => {
+  test("returns false if the title is not in stock", () => {
+    const book = {
+        title: "The Stone Diaries",
+        author: "Carol Shields",
+        yearOfPublication: 1993,
+        quantity: 0
+    };
+    expect(utils.isInStock(book)).toBe(false);
+
+  });
+});
+
+describe("utils.getTotalOrderPrice", () => {
+  test("returns total price with VAT applied", () => {
+    expect(utils.getTotalOrderPrice(10, 6)).toBe(72);
+  });  
+});
